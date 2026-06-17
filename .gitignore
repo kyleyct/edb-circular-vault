@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Secrets (never commit)
+*.key
+*.pem
+.secrets/
+config.local.json
+.env
+
+# PDF cache (CRITICAL: 方案 A 唔 host PDF 喺 GitHub)
+pdfs/
+**/pdfs/
+
+# PoC artifacts (intermediate, not user-facing)
+poc_output/
+
+# IA upload log (sensitive paths)
+data/ia_upload_log.json

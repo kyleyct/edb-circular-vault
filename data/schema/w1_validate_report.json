@@ -1,0 +1,9 @@
+{
+  "validated_at": "2026-06-16T14:33:22+00:00",
+  "schema": "data/schema/metadata.schema.json",
+  "instance": "data/snapshots/w1_poc_sample.json",
+  "valid": true,
+  "error_count": 0,
+  "errors": [],
+  "circular_count": 5
+}

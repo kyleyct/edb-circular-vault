@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "EDB Circular CSV Schema",
+  "description": "對應 data/circulars.csv 嘅 schema。CSV columns 必須對應 circular object 嘅 fields(除咗 distribution 由 array 變 '|' delimiter string)。",
+  "type": "object",
+  "required": ["columns", "rows"],
+  "properties": {
+    "columns": {
+      "type": "array",
+      "description": "CSV 嘅 column names(順序)",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "rows": {
+      "type": "array",
+      "description": "CSV 嘅 row data, 每個 row 係 object map column → value",
+      "items": {
+        "type": "object",
+        "required": ["circular_id", "circular_no", "issue_date", "title", "lang", "source_url", "archive_url", "pdf_sha256"],
+        "properties": {
+          "circular_id": { "type": "string", "pattern": "^EDBCM?\\d{5}$" },
+          "circular_no": { "type": "string", "pattern": "^EDBCM?\\d{3}/\\d{4}$" },
+          "issue_date": { "type": "string", "format": "date" },
+          "title": { "type": "string", "minLength": 1, "maxLength": 500 },
+          "lang": { "type": "string", "enum": ["zh-HK", "zh-CN", "en"] },
+          "distribution": { "type": "string", "description": "'|' delimited, e.g. '中學|小學|幼稚園'" },
+          "subject": { "type": ["string", "null"] },
+          "summary": { "type": "string", "maxLength": 5000 },
+          "source_url": { "type": "string", "format": "uri" },
+          "archive_url": { "type": "string", "format": "uri" },
+          "pdf_size_bytes": { "type": ["integer", "string"], "description": "整數 or 數字 string" },
+          "pdf_pages": { "type": ["integer", "string"] },
+          "pdf_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "scraped_at": { "type": "string", "format": "date-time" },
+          "scraper_version": { "type": "string" }
+        }
+      }
+    }
+  }
+}

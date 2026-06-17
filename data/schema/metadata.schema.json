@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/USER/edb-circular-vault/main/data/schema/metadata.schema.json",
+  "title": "EDB Circular Metadata Master Schema",
+  "description": "公開 metadata master file (data/metadata.json) 嘅 JSON Schema。對應 EDB Circular Bot Project Plan v0.2 §6.4。",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "tool",
+    "tool_version",
+    "source",
+    "source_url",
+    "license",
+    "attribution",
+    "disclaimer",
+    "circulars"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+(\\.\\d+)?$",
+      "description": "本 metadata file 嘅 schema 版本"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "metadata 產生時間 (ISO 8601 with timezone)"
+    },
+    "tool": {
+      "type": "string",
+      "description": "產生呢個 file 嘅工具名"
+    },
+    "tool_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+([+-].+)?$",
+      "description": "工具版本 (semver)"
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1,
+      "description": "資料來源名稱"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "資料來源 URL"
+    },
+    "license": {
+      "type": "string",
+      "description": "本 file 嘅 license 標示 (e.g. 'CC0 1.0 Universal')"
+    },
+    "attribution": {
+      "type": "string",
+      "minLength": 1,
+      "description": "歸屬標示 (e.g. '資料來源:教育局')"
+    },
+    "disclaimer": {
+      "type": "string",
+      "minLength": 1,
+      "description": "免責聲明"
+    },
+    "circulars": {
+      "type": "array",
+      "description": "通告 metadata 列表",
+      "items": { "$ref": "#/definitions/circular" }
+    }
+  },
+  "definitions": {
+    "circular": {
+      "type": "object",
+      "description": "一份 EDB 通告嘅完整 metadata",
+      "required": [
+        "circular_id",
+        "circular_no",
+        "title",
+        "issue_date",
+        "lang",
+        "source_url",
+        "archive_url",
+        "pdf_sha256"
+      ],
+      "properties": {
+        "circular_id": {
+          "type": "string",
+          "pattern": "^EDBCM?\\d{5}$",
+          "description": "EDB 內部 ID,從 PDF URL 推導 (e.g. 'EDBCM26082')"
+        },
+        "circular_no": {
+          "type": "string",
+          "pattern": "^EDBCM?\\d{3}/\\d{4}$",
+          "description": "對外通告編號 (e.g. 'EDBCM082/2026')"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "description": "通告標題"
+        },
+        "issue_date": {
+          "type": "string",
+          "format": "date",
+          "description": "發出日期 (YYYY-MM-DD)"
+        },
+        "lang": {
+          "type": "string",
+          "enum": ["zh-HK", "zh-CN", "en"],
+          "description": "本 metadata 對應嘅 PDF 語言"
+        },
+        "distribution": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "分發組別 (e.g. ['中學', '小學', '幼稚園'])"
+        },
+        "subject": {
+          "type": ["string", "null"],
+          "description": "主題 (一期 null,二期 LLM 標註)"
+        },
+        "summary": {
+          "type": "string",
+          "maxLength": 5000,
+          "description": "通告摘要 (從 EDB 結果頁抽取, 最多 5000 chars)"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "EDB 站原始 PDF URL"
+        },
+        "archive_url": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Internet Archive 永久 mirror URL (一期可 null, 待 T3 IA upload 完成後填寫)"
+        },
+        "archive_metadata_url": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Internet Archive item metadata page URL (optional, 一期可 null)"
+        },
+        "pdf_size_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "PDF file size (bytes)"
+        },
+        "pdf_pages": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "PDF 頁數"
+        },
+        "pdf_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "PDF SHA-256 hash (lowercase hex)"
+        },
+        "scraped_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "本 metadata 嘅 scrape 時間"
+        },
+        "scraper_version": {
+          "type": "string",
+          "description": "產生本 metadata 嘅 scraper 版本"
+        }
+      }
+    }
+  }
+}
