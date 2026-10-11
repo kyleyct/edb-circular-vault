@@ -1,9 +1,132 @@
 {
-  "generated_at": "2026-10-10T18:41:43+08:00",
+  "generated_at": "2026-10-11T11:25:11+08:00",
   "source": "edb-circular-vault",
   "disclaimer": "非官方 AI 摘要，以教育局原文為準。本站不託管 PDF。",
-  "count": 3,
+  "count": 7,
   "items": [
+    {
+      "circular_id": "EDBCM26186",
+      "title_clean": "理財教育進校園計劃",
+      "one_liner": "邀請中學及特殊學校參與2026/27學年「理財教育進校園」計劃及各項學生活動。",
+      "who_should_care": [
+        "中學",
+        "特殊學校",
+        "校長",
+        "負責教師"
+      ],
+      "key_points": [
+        "教育局於2026/27學年推出「理財教育進校園」計劃，邀請中學及特殊學校參與。",
+        "計劃設四項學生活動：理財創新賽、AI生成短片挑戰賽、桌上遊戲體驗、經濟資訊圖表大挑戰。",
+        "啟動禮暨分享會於2026年10月29日舉行，歡迎學校人員報名參加。",
+        "理財創新賽報名截止2026年11月20日，初賽2027年1月16日，決賽2027年2月20日。",
+        "參賽以學校為單位，每隊1至5名學生，每校最多50人，須由負責教師統籌。"
+      ],
+      "deadlines": [
+        "2026年10月29日：啟動禮暨分享會",
+        "2026年11月20日：理財創新賽報名截止",
+        "2026年12月11日：公布參與初賽名單",
+        "2027年1月16日：理財創新賽初賽日",
+        "2027年1月23日至2月19日：入圍隊伍網上師友計劃",
+        "2027年2月20日：決賽暨學習成果展",
+        "2027年初：其他活動詳情公布"
+      ],
+      "action_for_schools": "學校應鼓勵學生參與計劃，安排負責教師統籌及督導，並於2026年11月20日或之前為理財創新賽報名；亦可安排人員參加2026年10月29日啟動禮暨分享會。",
+      "parent_note": "家長毋須直接回覆通函；如子女參加活動，請留意學校通知，特別是拍攝錄影、作品使用及個人資料收集安排。",
+      "disclaimer": "非官方摘要，以教育局原文為準。",
+      "issue_date": "09/10/2026",
+      "edb_url": "https://applications.edb.gov.hk/circular/upload/EDBCM/EDBCM26186C.pdf",
+      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26186.pdf",
+      "generated_at": "2026-10-11T09:09:47",
+      "source": "deepseek"
+    },
+    {
+      "circular_id": "EDBCM26162",
+      "title_clean": "粵港澳大灣區城市探索之旅──中小學生內地交流計劃（2026/27）",
+      "one_liner": "教育局邀請中小學及特殊學校提名小四至中三學生和教學人員，參加2026/27粵港澳大灣區城市探索之旅內地交流計劃。",
+      "who_should_care": [
+        "小學",
+        "中學",
+        "特殊學校",
+        "校長"
+      ],
+      "key_points": [
+        "2026/27學年設8個粵港澳大灣區城市行程，為期1至2天，供小四至中三學生參加，各行程對象不同。",
+        "學校可報多個行程，先到先得；成團最少33人，特殊學校最少12人，每校最少提名11人（10學生及1教學人員）。",
+        "獲錄取師生可獲教育局資助團費70%，餘下30%須自付；學校可考慮以全方位學習及姊妹學校津貼支付餘款。",
+        "每10名提名學生可申請1名全額資助，須正接受半額／全額學校書簿津貼或綜援，且沒有接受其他資助。",
+        "報名由2026年10月14日起於承辦機構網站閱覽程序，並於出發前指定限期內完成；學校須取得家長同意。"
+      ],
+      "deadlines": [],
+      "action_for_schools": "學校應積極鼓勵從未參加內地交流計劃的學生參加，按行程對象提名師生、取得家長同意，並由2026年10月14日起於承辦機構網站報名及於出發前指定限期完成。",
+      "parent_note": "家長須同意子女參加；獲錄取師生可獲教育局資助團費70%，餘下30%須自付，學校可為每10名提名學生申請1名全額資助。非中國籍香港永久性居民宜盡快辦理《港澳居民來往內地通行證（非中國籍）》。",
+      "disclaimer": "非官方摘要，以教育局原文為準。",
+      "issue_date": "09/10/2026",
+      "edb_url": "https://applications.edb.gov.hk/circular/upload/EDBCM/EDBCM26162C.pdf",
+      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26162.pdf",
+      "generated_at": "2026-10-11T09:09:34",
+      "source": "deepseek"
+    },
+    {
+      "circular_id": "EDBCM26191",
+      "title_clean": "2026/27學年學界親親上網大行動講座系列",
+      "one_liner": "通知小學及中學校長有關2026/27學年「學界親親上網大行動」講座系列，並邀請學校參與。",
+      "who_should_care": [
+        "小學",
+        "中學",
+        "特殊學校",
+        "校長"
+      ],
+      "key_points": [
+        "活動由互聯網專業協會主辦、教育局支持，旨在促進數碼共融及推廣網絡安全。",
+        "講座系列於2026年10月至2027年6月舉行，涵蓋資訊素養、社交媒體、國家安全、AI等課題。",
+        "學校可向互聯網專業協會報名；須自行安排場地及設施，每次講座最少100人，可選網上模式。",
+        "名額有限，每間學校只可選擇一項講座主題。"
+      ],
+      "deadlines": [],
+      "action_for_schools": "學校應按校本需要鼓勵師生參與，自行安排場地及設施，並透過互聯網專業協會報名；每校限選一項主題。",
+      "parent_note": "通函未列家長直接行動；家長可留意學校轉發的講座資訊，了解網絡安全及數碼共融訊息。",
+      "disclaimer": "非官方摘要，以教育局原文為準。",
+      "issue_date": "08/10/2026",
+      "edb_url": "https://applications.edb.gov.hk/circular/upload/EDBCM/EDBCM26191C.pdf",
+      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26191.pdf",
+      "generated_at": "2026-10-11T09:09:58",
+      "source": "deepseek"
+    },
+    {
+      "circular_id": "EDBCM26184",
+      "title_clean": "「齊說共創‧三十時光」香港回歸祖國三十周年創作活動",
+      "one_liner": "教育局邀請中小學及特殊學校鼓勵學生參加香港回歸祖國三十周年創作活動。",
+      "who_should_care": [
+        "小學",
+        "中學",
+        "特殊學校",
+        "校長",
+        "負責教師",
+        "家長"
+      ],
+      "key_points": [
+        "活動對象為全港中小學生，分小學組及中學組；個人或2至5人隊伍參賽，每校最多提交8份作品。",
+        "作品形式不限，須附封面圖及中文作品簡介，小學組上限250字、中學組上限400字。",
+        "報名經香港教育城網站，2026年10月12日至11月30日；作品提交期為2026年12月1日至2027年2月26日。",
+        "作品須原創、從未公開發表；如用AI須聲明工具及過程；使用國旗國徽區旗區徽須依規格。",
+        "獲獎作品暫定2027年7月6至7日於九龍塘教育服務中心展出，電子展廊暫定2027年9月推出。"
+      ],
+      "deadlines": [
+        "報名截止：2026年11月30日（星期一）23時59分",
+        "作品提交截止：2027年2月26日（星期五）23時59分",
+        "結果公布：2027年6月初",
+        "頒獎禮及作品展示：2027年7月；得獎作品展2027年7月6至7日",
+        "電子展廊：2027年9月（暫定）"
+      ],
+      "action_for_schools": "學校應鼓勵學生參加，安排校內初選，並由負責教師按時於香港教育城網站完成報名及提交最多8份作品，並先取得學生及家長同意。",
+      "parent_note": "家長須知：學校提交作品前須徵得學生及家長同意；作品版權將屬教育局，教育局可展示、刊登及使用作品，獲獎學生姓名、年級及學校名稱或會公開。",
+      "disclaimer": "非官方摘要，以教育局原文為準。",
+      "issue_date": "08/10/2026",
+      "edb_url": "https://applications.edb.gov.hk/circular/upload/EDBCM/EDBCM26184C.pdf",
+      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26184.pdf",
+      "generated_at": "2026-10-11T09:10:06",
+      "source": "deepseek"
+    },
     {
       "circular_id": "EDBCM26190",
       "title_clean": "─備辦（英基學校協會屬下學",
@@ -25,7 +148,7 @@
       "disclaimer": "非官方摘要，以教育局原文為準。",
       "issue_date": "29/09/2026",
       "edb_url": "https://applications.edb.gov.hk/circular/upload/EDBCM/EDBCM26190C.pdf",
-      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26190_zh-HK.pdf",
+      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26190.pdf",
       "generated_at": "2026-10-10T17:56:41",
       "source": "offline_fallback"
     },
@@ -49,7 +172,7 @@
       "disclaimer": "非官方摘要，以教育局原文為準。",
       "issue_date": "29/09/2026",
       "edb_url": "https://applications.edb.gov.hk/circular/upload/EDBCM/EDBCM26119C.pdf",
-      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26119_zh-HK.pdf",
+      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26119.pdf",
       "generated_at": "2026-10-10T17:57:05",
       "source": "offline_fallback"
     },
@@ -73,7 +196,7 @@
       "disclaimer": "非官方摘要，以教育局原文為準。",
       "issue_date": "18/09/2026",
       "edb_url": "https://applications.edb.gov.hk/circular/upload/EDBCM/EDBCM26149C.pdf",
-      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26149_zh-HK.pdf",
+      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26149.pdf",
       "generated_at": "2026-10-10T17:57:05",
       "source": "offline_fallback"
     }
