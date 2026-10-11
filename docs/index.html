@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>教育局通告摘要（非官方）｜EDB Circular Vault</title>
+  <meta name="description" content="非官方 AI 摘要列表，方便教師與家長快速掌握教育局通告重點。內容以教育局原文為準；本站不託管 PDF。" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <h1>教育局通告摘要（非官方）</h1>
+      <p class="tagline">為教師與家長整理嘅繁中重點摘要 · 每日更新 · 唔取代原文</p>
+      <div class="badge-row">
+        <span class="badge">非官方</span>
+        <span class="badge">唔託管 PDF</span>
+        <span class="badge">連去 EDB／IA</span>
+      </div>
+      <p class="disclaimer-banner" id="global-disclaimer">
+        本頁為開源專案產生嘅 AI／自動摘要，與教育局無關。一切以
+        <a href="https://applications.edb.gov.hk/circular/" rel="noopener" target="_blank">教育局通告網頁</a>
+        原文為準。本站不託管任何 PDF。
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="toolbar">
+      <div class="meta" id="status">載入中…</div>
+      <label>
+        <span class="visually-hidden" style="position:absolute;left:-9999px">搜尋</span>
+        <input type="search" id="q" placeholder="搜尋編號、標題、關鍵字…" autocomplete="off" />
+      </label>
+    </div>
+    <div id="list"></div>
+    <footer class="site">
+      <p>
+        專案：
+        <a href="https://github.com/kyleyct/edb-circular-vault" rel="noopener" target="_blank">kyleyct/edb-circular-vault</a>
+        · 資料：<code>data/summaries.json</code>
+        · <a href="PAGES.md">啟用／預覽說明</a>
+      </p>
+    </footer>
+  </main>
+
+  <script>
+(function () {
+  const listEl = document.getElementById("list");
+  const statusEl = document.getElementById("status");
+  const qEl = document.getElementById("q");
+  const discEl = document.getElementById("global-disclaimer");
+  let items = [];
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function render(filter) {
+    const q = (filter || "").trim().toLowerCase();
+    const shown = !q
+      ? items
+      : items.filter(function (it) {
+          const blob = [
+            it.circular_id,
+            it.title_clean,
+            it.one_liner,
+            (it.key_points || []).join(" "),
+            (it.who_should_care || []).join(" "),
+            it.action_for_schools,
+            it.parent_note,
+          ]
+            .join(" ")
+            .toLowerCase();
+          return blob.indexOf(q) !== -1;
+        });
+
+    if (!shown.length) {
+      listEl.innerHTML = '<p class="empty">冇符合嘅通告。</p>';
+      return;
+    }
+
+    listEl.innerHTML = shown
+      .map(function (it) {
+        const chips = (it.who_should_care || [])
+          .map(function (c) {
+            return '<span class="chip">' + esc(c) + "</span>";
+          })
+          .join("");
+        const points = (it.key_points || [])
+          .map(function (p) {
+            return "<li>" + esc(p) + "</li>";
+          })
+          .join("");
+        const deadlines = (it.deadlines || [])
+          .map(function (d) {
+            return "<li>" + esc(d) + "</li>";
+          })
+          .join("");
+        const edb = it.edb_url
+          ? '<a href="' + esc(it.edb_url) + '" rel="noopener" target="_blank">教育局原文（PDF）</a>'
+          : "";
+        const ia = it.ia_url
+          ? '<a href="' + esc(it.ia_url) + '" rel="noopener" target="_blank">Internet Archive（若已歸檔）</a>'
+          : "";
+        return (
+          '<article class="card" data-id="' +
+          esc(it.circular_id) +
+          '">' +
+          "<h2>" +
+          esc(it.title_clean || it.circular_id) +
+          "</h2>" +
+          '<div class="id-line">' +
+          esc(it.circular_id) +
+          (it.issue_date ? " · 發出：" + esc(it.issue_date) : "") +
+          "</div>" +
+          '<p class="one-liner">' +
+          esc(it.one_liner) +
+          "</p>" +
+          (chips ? '<div class="chips">' + chips + "</div>" : "") +
+          (points
+            ? '<div class="section-label">重點</div><ul class="points">' + points + "</ul>"
+            : "") +
+          (deadlines
+            ? '<div class="section-label">期限</div><ul class="points">' + deadlines + "</ul>"
+            : "") +
+          (it.action_for_schools
+            ? '<div class="section-label">學校可做</div><p>' +
+              esc(it.action_for_schools) +
+              "</p>"
+            : "") +
+          (it.parent_note
+            ? '<div class="section-label">家長備註</div><p>' + esc(it.parent_note) + "</p>"
+            : "") +
+          '<div class="links">' +
+          edb +
+          ia +
+          "</div>" +
+          '<p class="card-disclaimer">' +
+          esc(it.disclaimer || "非官方摘要，以教育局原文為準。") +
+          "</p>" +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
+  fetch("data/summaries.json", { cache: "no-store" })
+    .then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      items = data.items || [];
+      if (data.disclaimer) {
+        discEl.innerHTML =
+          esc(data.disclaimer) +
+          " 一切以 <a href=\"https://applications.edb.gov.hk/circular/\" rel=\"noopener\" target=\"_blank\">教育局通告網頁</a> 原文為準。";
+      }
+      statusEl.textContent =
+        "共 " +
+        (data.count != null ? data.count : items.length) +
+        " 份" +
+        (data.generated_at ? " · 資料產生：" + data.generated_at : "");
+      render(qEl.value);
+    })
+    .catch(function (err) {
+      statusEl.textContent = "載入失敗";
+      listEl.innerHTML =
+        '<div class="status-error">無法讀取 <code>data/summaries.json</code>（' +
+        esc(err.message) +
+        "）。請確認已跑 <code>pages_build.py</code>，並用本機 HTTP server 開啟（唔好用 file://）。</div>";
+    });
+
+  qEl.addEventListener("input", function () {
+    render(qEl.value);
+  });
+})();
+  </script>
+</body>
+</html>

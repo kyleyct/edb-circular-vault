@@ -32,3 +32,10 @@ poc_output/
 
 # IA upload log (sensitive paths)
 data/ia_upload_log.json
+
+# Notify pipeline local state (tokens never belong here either)
+notify_state.json
+**/notify_state.json
+.telegram_token
+summaries/
+**/summaries/

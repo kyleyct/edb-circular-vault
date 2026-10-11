@@ -16,6 +16,17 @@
 
 GitHub 唔 host 任何 PDF,所有 PDF 連結到 Internet Archive。私隱 + 法律風險歸零。
 
+## 通告摘要站（GitHub Pages MVP）
+
+繁中靜態列表（教師／家長）：AI／自動摘要 + 連去 EDB／IA，**唔 host PDF**。
+
+- 本地預覽：`cd docs && python3 -m http.server 8080` → http://127.0.0.1:8080/
+- 建資料：`python3 tools/pages_build.py --summaries-dir /path/to/summaries --out docs/data --write-individual`
+- 啟用說明：[`docs/PAGES.md`](docs/PAGES.md)
+- 計劃：Pages-first；Telegram 可選（見 `docs/telegram-notify.md`）
+
+---
+
 ## 點樣用?
 
 ### 查通告
@@ -121,3 +132,11 @@ Internet Archive 嘅 mirror 雖永久但非 100% 保證,建議用戶自備本地
 由獨立開發者於 2026 年 6 月開始,作為香港教育界 open data contribution 嘅個人項目。
 
 如有問題或建議,請開 [Issue](../../issues)。
+
+## Telegram 通告速報（非官方，MVP）
+
+自動繁中摘要 → Telegram Channel。詳見 [`docs/telegram-notify.md`](docs/telegram-notify.md)。
+
+本地執行環境暫時以 watch 目錄為準；`tools/llm_summarize.py`、`tools/telegram_notify.py`、`tools/notify_pipeline.py` 已同步。設定 `EDB_WATCH_ROOT` 指向有 `queue/`、`metadata/`、`pdfs/` 嘅目錄。
+
+**唔會**喺本 repo 存放 `TELEGRAM_BOT_TOKEN`／API keys。
