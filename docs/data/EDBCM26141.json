@@ -1,0 +1,28 @@
+{
+  "circular_id": "EDBCM26141",
+  "title_clean": "教育局通告的檢討",
+  "one_liner": "公布教育局通告檢討結果，附錄所列通告自2026年9月1日起不再生效。",
+  "who_should_care": [
+    "幼稚園",
+    "小學",
+    "中學",
+    "特殊學校",
+    "校長",
+    "學校行政"
+  ],
+  "key_points": [
+    "教育局檢討通告，仍然生效的通告可於教育局網站或內聯網查閱。",
+    "附錄所列通告因內容過時、更新、被取代或納入其他指引，已不再生效。",
+    "該批通告自2026年9月1日起不再生效。",
+    "附錄列出9項已取代／撤銷通告，涵蓋津貼、無煙校園、非華語支援、缺課通報等。"
+  ],
+  "deadlines": [],
+  "action_for_schools": "校長及學校行政應查閱仍生效通告，並按附錄停止沿用已於2026年9月1日起失效的通告。",
+  "parent_note": "家長一般無需直接行動；學校處理相關事宜時應以教育局最新生效通告為準。",
+  "disclaimer": "非官方摘要，以教育局原文為準。",
+  "issue_date": "01/09/2026",
+  "edb_url": "https://applications.edb.gov.hk/circular/upload/EDBCM/EDBCM26141C.pdf",
+  "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26141.pdf",
+  "generated_at": "2026-10-13T18:59:04",
+  "source": "deepseek"
+}
