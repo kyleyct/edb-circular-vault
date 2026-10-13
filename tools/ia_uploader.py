@@ -88,7 +88,7 @@ def build_item_metadata(year: int, count: int) -> dict:
         "rights": "Metadata: CC0 1.0. PDF: © Education Bureau, archive use only.",
         "description": (
             f"Mirror of Education Bureau circulars issued in {year}, "
-            f"archived from https://applications.edb.gov.hk/circular/. "
+            f"archived from https://applications.edb.gov.hk/circular/circular.aspx?langno=2. "
             f"Contains {count} EDB circulars. See project: "
             f"https://github.com/USER/edb-circular-vault"
         ),

@@ -79,5 +79,5 @@ python3 telegram_notify.py --dry-run --limit 3
 
 ## 免責
 
-非官方開源摘要，與教育局無關；內容以 [EDB 通告站](https://applications.edb.gov.hk/circular/) 原文為準。  
+非官方開源摘要，與教育局無關；內容以 [EDB 通告站](https://applications.edb.gov.hk/circular/circular.aspx?langno=2) 原文為準。  
 專案：https://github.com/kyleyct/edb-circular-vault

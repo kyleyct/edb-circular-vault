@@ -11,7 +11,7 @@
   <header class="site">
     <div class="wrap">
       <h1>教育局通告摘要（非官方）</h1>
-      <p class="tagline">為教師與家長整理嘅繁中重點摘要 · 每日更新 · 唔取代原文</p>
+      <p class="tagline">為教師與家長整理嘅繁中重點摘要 · 每日兩次同步 · 唔取代原文</p>
       <div class="badge-row">
         <span class="badge">非官方</span>
         <span class="badge">唔託管 PDF</span>
@@ -19,7 +19,7 @@
       </div>
       <p class="disclaimer-banner" id="global-disclaimer">
         本頁為開源專案產生嘅 AI／自動摘要，與教育局無關。一切以
-        <a href="https://applications.edb.gov.hk/circular/" rel="noopener" target="_blank">教育局通告網頁</a>
+        <a href="https://applications.edb.gov.hk/circular/circular.aspx?langno=2" rel="noopener" target="_blank">教育局通告網頁</a>
         原文為準。本站不託管任何 PDF。
       </p>
     </div>
@@ -159,13 +159,14 @@
       if (data.disclaimer) {
         discEl.innerHTML =
           esc(data.disclaimer) +
-          " 一切以 <a href=\"https://applications.edb.gov.hk/circular/\" rel=\"noopener\" target=\"_blank\">教育局通告網頁</a> 原文為準。";
+          " 一切以 <a href=\"https://applications.edb.gov.hk/circular/circular.aspx?langno=2\" rel=\"noopener\" target=\"_blank\">教育局通告網頁</a> 原文為準。";
       }
+      var syncAt = data.last_synced_at || data.generated_at || "";
       statusEl.textContent =
         "共 " +
         (data.count != null ? data.count : items.length) +
         " 份" +
-        (data.generated_at ? " · 資料產生：" + data.generated_at : "");
+        (syncAt ? " · 最後同步：" + syncAt : "");
       render(qEl.value);
     })
     .catch(function (err) {

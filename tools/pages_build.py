@@ -163,8 +163,10 @@ def build(
         reverse=True,
     )
 
+    now = datetime.now(HK).isoformat(timespec="seconds")
     payload = {
-        "generated_at": datetime.now(HK).isoformat(timespec="seconds"),
+        "generated_at": now,
+        "last_synced_at": now,  # always written — even when items unchanged (empty sync)
         "source": "edb-circular-vault",
         "disclaimer": DEFAULT_DISCLAIMER,
         "count": len(items),

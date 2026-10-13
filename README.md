@@ -7,7 +7,7 @@
 
 ## 點解有呢個 project?
 
-教育局通告站(`applications.edb.gov.hk/circular/`)只保留**過去 360 日**(一年)嘅通告,過期就清除。對於需要跨年比較、查找過往政策嘅教師、行政主任、政策研究員嚟講,呢個 retention 唔夠。
+教育局通告站(`applications.edb.gov.hk/circular/circular.aspx?langno=2`)只保留**過去 360 日**(一年)嘅通告,過期就清除。對於需要跨年比較、查找過往政策嘅教師、行政主任、政策研究員嚟講,呢個 retention 唔夠。
 
 本工具透過雙軌架構,將 EDB 通告永久 archive:
 
@@ -24,6 +24,7 @@ GitHub 唔 host 任何 PDF,所有 PDF 連結到 Internet Archive。私隱 + 法�
 - 建資料：`python3 tools/pages_build.py --summaries-dir /path/to/summaries --out docs/data --write-individual`
 - 啟用說明：[`docs/PAGES.md`](docs/PAGES.md)
 - 計劃：Pages-first；Telegram 可選（見 `docs/telegram-notify.md`）
+- 同步建議（HKT）：**08:45** 同 **18:45**；即使冇新通告都要 rebuild Pages 以更新 `last_synced_at`（見 `docs/PAGES.md`）
 
 ---
 

@@ -57,4 +57,12 @@ edb_daily.py → llm_summarize.py → pages_build.py →（可選）telegram_not
 
 ## 免責
 
-非官方開源摘要，與教育局無關；內容以 [EDB 通告站](https://applications.edb.gov.hk/circular/) 原文為準。
+非官方開源摘要，與教育局無關；內容以 [EDB 通告站](https://applications.edb.gov.hk/circular/circular.aspx?langno=2) 原文為準。
+
+## 最後同步時間（empty sync）
+
+`summaries.json` 每次 `pages_build` 都會寫入 `last_synced_at`（同 `generated_at`）。
+即使當日冇新通告，pipeline 都要 rebuild + push，網站先會顯示「最後同步」。
+
+建議 Grok Bot / cron（HKT）：**08:45**、**18:45**。本地 orchestrator：`edb-watch/daily_pipeline.py --push`。
+
