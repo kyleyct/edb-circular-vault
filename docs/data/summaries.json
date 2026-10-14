@@ -1,10 +1,37 @@
 {
-  "generated_at": "2026-10-13T19:04:53+08:00",
-  "last_synced_at": "2026-10-13T19:04:53+08:00",
+  "generated_at": "2026-10-14T08:59:57+08:00",
+  "last_synced_at": "2026-10-14T08:59:57+08:00",
   "source": "edb-circular-vault",
   "disclaimer": "非官方 AI 摘要，以教育局原文為準。本站不託管 PDF。",
-  "count": 70,
+  "count": 71,
   "items": [
+    {
+      "circular_id": "EDBCM26179",
+      "title_clean": "透過英語智慧格言推廣正向價值觀及態度計劃2026/27",
+      "one_liner": "邀請小學及中學參與2026/27年度「透過英語智慧格言推廣正向價值觀及態度」計劃下的連串學生活動。",
+      "who_should_care": [
+        "小學",
+        "中學",
+        "校長",
+        "英文科主任"
+      ],
+      "key_points": [
+        "計劃結合英語教育與價值觀教育，主題為「SOW the Reading Seed – The Spark Within, ",
+        "活動包括講故事、電影、演講、貼紙設計、閱讀馬拉松、木偶劇及攝影詩等比賽。",
+        "學校可按學生需要將活動及資源融入英語課程，並鼓勵跨科協作。",
+        "計劃推出新吉祥物Sowy，透過社交媒體與學生互動，配合全港英語說話活動。",
+        "相關學習資源、學生培訓及教師專業發展詳情將於SOW網頁公布。"
+      ],
+      "deadlines": [],
+      "action_for_schools": "學校應鼓勵英文科及相關科目統籌，按學生需要將SOW活動及資源融入課程，並推動跨科協作。",
+      "parent_note": "家長可鼓勵子女參與閱讀及英語活動，培養正向價值觀；通函未列家長直接行動。",
+      "disclaimer": "非官方摘要，以教育局原文為準。",
+      "issue_date": "14/10/2026",
+      "edb_url": "https://applications.edb.gov.hk/circular/upload/EDBCM/EDBCM26179E.pdf",
+      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26179_zh-HK.pdf",
+      "generated_at": "2026-10-14T08:59:57",
+      "source": "deepseek"
+    },
     {
       "circular_id": "EDBCM26182",
       "title_clean": "紅軍長征勝利九十周年專題展覽",
