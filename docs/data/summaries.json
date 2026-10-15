@@ -1,10 +1,36 @@
 {
-  "generated_at": "2026-10-15T09:14:33+08:00",
-  "last_synced_at": "2026-10-15T09:14:33+08:00",
+  "generated_at": "2026-10-15T09:14:55+08:00",
+  "last_synced_at": "2026-10-15T09:14:55+08:00",
   "source": "edb-circular-vault",
   "disclaimer": "非官方 AI 摘要，以教育局原文為準。本站不託管 PDF。",
-  "count": 71,
+  "count": 72,
   "items": [
+    {
+      "circular_id": "EDBCM26181",
+      "title_clean": "(注意：所有幼稚園、小學及中學校長均應閱讀此通函)",
+      "one_liner": "本通函旨在通知各幼稚園、小學及中學校長有關由教育局課程及質素保證科分發的學與教材料事宜，以及相關安排。",
+      "who_should_care": [
+        "幼稚園",
+        "小學",
+        "中學",
+        "特殊學校",
+        "校長"
+      ],
+      "key_points": [
+        "教 育 局 通 函 第 181/2026 號 分發名單： 各幼稚園、小學及中學 副 本 送 ： 各 組 主 管 —備 考",
+        "分發：幼稚園／小學／中學／特殊學校／校長",
+        "發出日期：15/10/2026"
+      ],
+      "deadlines": [],
+      "action_for_schools": "校長／相關統籌查閱通函詳情並按指示備辦。",
+      "parent_note": "家長一般無需直接行動；如有需要學校會另行通知。",
+      "disclaimer": "非官方摘要，以教育局原文為準。",
+      "issue_date": "15/10/2026",
+      "edb_url": "https://applications.edb.gov.hk/circular/upload/EDBCM/EDBCM26181C.pdf",
+      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26181_zh-HK.pdf",
+      "generated_at": "2026-10-15T09:14:55",
+      "source": "offline_fallback"
+    },
     {
       "circular_id": "EDBCM26179",
       "title_clean": "透過英語智慧格言推廣正向價值觀及態度計劃2026/27",
