@@ -1,6 +1,6 @@
 # GitHub Pages — 通告摘要站（MVP）
 
-繁中靜態站：列表最新通告摘要，外連教育局 PDF／Internet Archive。**唔託管 PDF。**
+繁中靜態站：列表最新通告摘要，外連教育局 PDF／Internet Archive。**不託管 PDF。**
 
 ## 本地預覽
 
@@ -12,7 +12,7 @@ python3 pages_build.py \
   --csv /workspace/github-apply/edb-circular-vault/data/circulars.csv \
   --write-individual
 
-# 2) 起靜態 server（必須 HTTP，唔好用 file://）
+# 2) 起靜態 server（必須 HTTP，不要用 file://）
 cd /workspace/github-apply/edb-circular-vault/docs
 python3 -m http.server 8080
 # 瀏覽器開 http://127.0.0.1:8080/
@@ -31,7 +31,7 @@ python3 tools/pages_build.py --summaries-dir /path/to/summaries --out docs/data 
 3. Branch 選 `main` 或 `pages-mvp`；folder 選 **`/docs`**
 4. Save → 約數分鐘後：`https://kyleyct.github.io/edb-circular-vault/`
 
-建議先喺 `pages-mvp` 預覽，滿意再 merge 去 `main`。
+建議先在 `pages-mvp` 預覽，滿意再 merge 到 `main`。
 
 ## 檔案
 
@@ -51,7 +51,7 @@ python3 tools/pages_build.py --summaries-dir /path/to/summaries --out docs/data 
 edb_daily.py → llm_summarize.py → pages_build.py →（可選）telegram_notify.py
 ```
 
-`notify_pipeline.py` 會喺 summarize 之後跑 `pages_build.py`（可用 `--skip-pages` 關閉）。
+`notify_pipeline.py` 會在 summarize 之後跑 `pages_build.py`（可用 `--skip-pages` 關閉）。
 
 更新公開站：commit／push `docs/data/summaries.json`（及個別 JSON 若有）。
 
@@ -62,7 +62,7 @@ edb_daily.py → llm_summarize.py → pages_build.py →（可選）telegram_not
 ## 最後同步時間（empty sync）
 
 `summaries.json` 每次 `pages_build` 都會寫入 `last_synced_at`（同 `generated_at`）。
-即使當日冇新通告，pipeline 都要 rebuild + push，網站先會顯示「最後同步」。
+即使當日沒有新通告，pipeline 都要 rebuild + push，網站才會顯示「最後同步」。
 
 建議 Grok Bot / cron（HKT）：**08:45**、**18:45**。本地 orchestrator：`edb-watch/daily_pipeline.py --push`。
 

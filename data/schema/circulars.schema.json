@@ -1,19 +1,19 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
   "title": "EDB Circular CSV Schema",
-  "description": "對應 data/circulars.csv 嘅 schema。CSV columns 必須對應 circular object 嘅 fields(除咗 distribution 由 array 變 '|' delimiter string)。",
+  "description": "對應 data/circulars.csv 的 schema。CSV columns 必須對應 circular object 的 fields(除了 distribution 由 array 變 '|' delimiter string)。",
   "type": "object",
   "required": ["columns", "rows"],
   "properties": {
     "columns": {
       "type": "array",
-      "description": "CSV 嘅 column names(順序)",
+      "description": "CSV 的 column names(順序)",
       "minItems": 1,
       "items": { "type": "string", "minLength": 1 }
     },
     "rows": {
       "type": "array",
-      "description": "CSV 嘅 row data, 每個 row 係 object map column → value",
+      "description": "CSV 的 row data, 每個 row 是 object map column → value",
       "items": {
         "type": "object",
         "required": ["circular_id", "circular_no", "issue_date", "title", "lang", "source_url", "archive_url", "pdf_sha256"],

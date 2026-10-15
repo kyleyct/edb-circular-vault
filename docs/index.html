@@ -11,14 +11,14 @@
   <header class="site">
     <div class="wrap">
       <h1>教育局通告摘要（非官方）</h1>
-      <p class="tagline">為教師與家長整理嘅繁中重點摘要 · 每日兩次同步 · 唔取代原文</p>
+      <p class="tagline">為教師與家長整理的繁中重點摘要 · 每日兩次同步 · 不取代原文</p>
       <div class="badge-row">
         <span class="badge">非官方</span>
-        <span class="badge">唔託管 PDF</span>
+        <span class="badge">不託管 PDF</span>
         <span class="badge">連去 EDB／IA</span>
       </div>
       <p class="disclaimer-banner" id="global-disclaimer">
-        本頁為開源專案產生嘅 AI／自動摘要，與教育局無關。一切以
+        本頁為開源專案產生的 AI／自動摘要，與教育局無關。一切以
         <a href="https://applications.edb.gov.hk/circular/circular.aspx?langno=2" rel="noopener" target="_blank">教育局通告網頁</a>
         原文為準。本站不託管任何 PDF。
       </p>
@@ -80,7 +80,7 @@
         });
 
     if (!shown.length) {
-      listEl.innerHTML = '<p class="empty">冇符合嘅通告。</p>';
+      listEl.innerHTML = '<p class="empty">沒有符合的通告。</p>';
       return;
     }
 
@@ -174,7 +174,7 @@
       listEl.innerHTML =
         '<div class="status-error">無法讀取 <code>data/summaries.json</code>（' +
         esc(err.message) +
-        "）。請確認已跑 <code>pages_build.py</code>，並用本機 HTTP server 開啟（唔好用 file://）。</div>";
+        "）。請確認已跑 <code>pages_build.py</code>，並用本機 HTTP server 開啟（不要用 file://）。</div>";
     });
 
   qEl.addEventListener("input", function () {

@@ -1,6 +1,6 @@
 # Schema — EDB Circular Metadata
 
-本文檔詳述 `data/metadata.json` 同 `data/circulars.csv` 嘅 schema。
+本文檔詳述 `data/metadata.json` 及 `data/circulars.csv` 的 schema。
 
 ## 主 schema (`data/schema/metadata.schema.json`)
 
@@ -12,7 +12,7 @@ JSON Schema draft-07 格式,符合 [json-schema.org](https://json-schema.org/) �
 |---|---|---|---|
 | `schema_version` | string | ✓ | Schema 版本(語義化版本),e.g. `"1.0"` |
 | `generated_at` | string (date-time) | ✓ | metadata 產生時間(ISO 8601 + timezone) |
-| `tool` | string | ✓ | 產生此 file 嘅工具名,e.g. `"EDB Circular Vault"` |
+| `tool` | string | ✓ | 產生此 file 的工具名，e.g. `"EDB Circular Vault"` |
 | `tool_version` | string | ✓ | 工具版本(semver) |
 | `source` | string | ✓ | 資料來源名稱 |
 | `source_url` | string (uri) | ✓ | 資料來源 URL |

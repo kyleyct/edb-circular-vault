@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/USER/edb-circular-vault/main/data/schema/metadata.schema.json",
   "title": "EDB Circular Metadata Master Schema",
-  "description": "公開 metadata master file (data/metadata.json) 嘅 JSON Schema。對應 EDB Circular Bot Project Plan v0.2 §6.4。",
+  "description": "公開 metadata master file (data/metadata.json) 的 JSON Schema。對應 EDB Circular Bot Project Plan v0.2 §6.4。",
   "type": "object",
   "required": [
     "schema_version",
@@ -20,7 +20,7 @@
     "schema_version": {
       "type": "string",
       "pattern": "^\\d+\\.\\d+(\\.\\d+)?$",
-      "description": "本 metadata file 嘅 schema 版本"
+      "description": "本 metadata file 的 schema 版本"
     },
     "generated_at": {
       "type": "string",
@@ -29,7 +29,7 @@
     },
     "tool": {
       "type": "string",
-      "description": "產生呢個 file 嘅工具名"
+      "description": "產生這個 file 的工具名"
     },
     "tool_version": {
       "type": "string",
@@ -48,7 +48,7 @@
     },
     "license": {
       "type": "string",
-      "description": "本 file 嘅 license 標示 (e.g. 'CC0 1.0 Universal')"
+      "description": "本 file 的 license 標示 (e.g. 'CC0 1.0 Universal')"
     },
     "attribution": {
       "type": "string",
@@ -69,7 +69,7 @@
   "definitions": {
     "circular": {
       "type": "object",
-      "description": "一份 EDB 通告嘅完整 metadata",
+      "description": "一份 EDB 通告的完整 metadata",
       "required": [
         "circular_id",
         "circular_no",
@@ -105,7 +105,7 @@
         "lang": {
           "type": "string",
           "enum": ["zh-HK", "zh-CN", "en"],
-          "description": "本 metadata 對應嘅 PDF 語言"
+          "description": "本 metadata 對應的 PDF 語言"
         },
         "distribution": {
           "type": "array",
@@ -154,11 +154,11 @@
         "scraped_at": {
           "type": "string",
           "format": "date-time",
-          "description": "本 metadata 嘅 scrape 時間"
+          "description": "本 metadata 的 scrape 時間"
         },
         "scraper_version": {
           "type": "string",
-          "description": "產生本 metadata 嘅 scraper 版本"
+          "description": "產生本 metadata 的 scraper 版本"
         }
       }
     }
