@@ -2,8 +2,8 @@
 """
 Build sample metadata.json from W1 PoC results, validate against schema.
 
-對應 EDB Circular Bot Project Plan v0.2 §6.4 — 將 W1 PoC 嘅 circulars normalize 至
-符合 data/schema/metadata.schema.json 嘅格式,並產生 validate report。
+對應 EDB Circular Bot Project Plan v0.2 §6.4 — 將 W1 PoC 的 circulars normalize 至
+符合 data/schema/metadata.schema.json 的格式，並產生 validate report。
 
 Usage:
     python3 tools/build_sample.py
@@ -30,7 +30,7 @@ SOURCE = "Education Bureau, HKSAR Government"
 SOURCE_URL = "https://www.edb.gov.hk/tc/about-edb/forms-and-circulars/index.html"
 LICENSE = "CC0 1.0 Universal (Public Domain Dedication) - metadata only"
 ATTRIBUTION = "資料來源:教育局(https://www.edb.gov.hk/)。本工具僅提供 metadata 索引,PDF 透過 Internet Archive 永久 mirror。"
-DISCLAIMER = "本工具非官方 open data 索引工具,與教育局無關。如發現資料與 EDB 官網不一致,以 EDB 官網為準。開發者不對因使用本工具而產生嘅任何損失負責。"
+DISCLAIMER = "本工具非官方 open data 索引工具，與教育局無關。如發現資料與 EDB 官網不一致，以 EDB 官網為準。開發者不對因使用本工具而產生的任何損失負責。"
 
 
 def normalize_date(issue_date: str) -> str:
@@ -39,7 +39,7 @@ def normalize_date(issue_date: str) -> str:
         return None
     m = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{4})$", issue_date.strip())
     if not m:
-        return issue_date  # 唔識 format, keep original (validate 會 catch)
+        return issue_date  # 不識 format, keep original (validate 會 catch)
     d, mo, y = m.groups()
     return f"{y}-{int(mo):02d}-{int(d):02d}"
 
@@ -54,7 +54,7 @@ def normalize_distribution(dist: str) -> list:
 def normalize_circular(c: dict) -> dict:
     """Normalize W1 circular entry to schema-compliant format."""
     pdf_links = c.get("pdf_links", {})
-    # W1 揀咗 zh-HK, 但 schema 入面 lang 係 per-circular
+    # W1 選了 zh-HK，但 schema 內 lang 是 per-circular
     # 如果有 multi-lang links, 預設取 zh-HK, lang = "zh-HK"
     lang = "zh-HK"
     source_url = pdf_links.get(lang) or next(iter(pdf_links.values()), None)
@@ -80,7 +80,7 @@ def normalize_circular(c: dict) -> dict:
         "archive_url": None,  # 一期 null, 待 T3
         "archive_metadata_url": None,
         "pdf_size_bytes": pdf_size,
-        "pdf_pages": None,  # W1 冇 extract, 一期 null (可從 file command 拎)
+        "pdf_pages": None,  # W1 沒有 extract，一期 null（可從 file command 取得）
         "pdf_sha256": c.get("pdf_sha256"),
         "scraped_at": c.get("scraped_at"),
         "scraper_version": "0.1.0",  # W1 PoC version

@@ -3,8 +3,8 @@
 EDB 通告備份 — CSV Exporter
 對應 EDB Circular Bot Project Plan v0.2 §6.4 — data/circulars.csv
 
-將 data/snapshots/*.json 嘅 metadata 攤平成 CSV (spreadsheet view)。
-用 '|' delimiter join distribution array(避免 CSV escape 嘅 quote 問題)。
+將 data/snapshots/*.json 的 metadata 攤平成 CSV（spreadsheet view）。
+用 '|' delimiter join distribution array（避免 CSV escape 的 quote 問題）。
 
 Usage:
     python3 tools/export_csv.py [--input data/snapshots/full_360d_zh-HK.json] [--output data/circulars.csv]

@@ -3,7 +3,7 @@
 EDB 通告備份 — Internet Archive Uploader
 對應 EDB Circular Bot Project Plan v0.2 §7.2 + §17 — IA Uploader
 
-將 data/snapshots/*.json 嘅 metadata + 對應 PDF 上傳到 Internet Archive
+將 data/snapshots/*.json 的 metadata + 對應 PDF 上傳到 Internet Archive
 archive.org,提供永久 mirror (解決 EDB 站 360 日後清除問題)。
 
 Setup:
@@ -25,7 +25,7 @@ Usage:
     # 自定 item prefix
     python3 tools/ia_uploader.py --item-prefix edb-circulars
 
-    # Dry-run(只 print plan, 唔 upload)
+    # Dry-run（只 print plan，不 upload）
     python3 tools/ia_uploader.py --dry-run
 """
 import argparse
@@ -145,7 +145,7 @@ def main():
     parser.add_argument("--item-prefix", type=str, default=DEFAULT_ITEM_PREFIX,
                         help=f"IA item name prefix (default: {DEFAULT_ITEM_PREFIX})")
     parser.add_argument("--dry-run", action="store_true",
-                        help="只 print plan, 唔 upload")
+                        help="只 print plan，不 upload")
     parser.add_argument("--max-files", type=int, default=None,
                         help="限制 upload file 數量 (for testing)")
     args = parser.parse_args()
@@ -203,7 +203,7 @@ def main():
 
         item = ia.get_item(item_name)
         if not item.exists:
-            log.info(f"Item 唔存在, 創建: {item_name}")
+            log.info(f"Item 不存在，創建: {item_name}")
             item.modify_metadata(build_item_metadata(year, len(items)))
 
         for i, c in enumerate(items, 1):
@@ -214,7 +214,7 @@ def main():
             pdf_filename = f"{cid}_{c.get('lang', 'zh-HK')}.pdf"
             pdf_path = pdf_dir / pdf_filename
             if not pdf_path.exists():
-                log.warning(f"  [{i}/{len(items)}] {cid}: PDF 唔存在, skip ({pdf_path})")
+                log.warning(f"  [{i}/{len(items)}] {cid}: PDF 不存在，skip ({pdf_path})")
                 total_failed += 1
                 continue
             log.info(f"  [{i}/{len(items)}] {cid} -> {pdf_path.name} ({pdf_path.stat().st_size} bytes)")

@@ -8,7 +8,7 @@ Features (A9-A13):
 - A10: 重 scrape (--force 模式, 跳過 hash dedup)
 - A11: 跨年度 scrape (--from / --to)
 - A12: 三語 scrape (--lang zh-HK / zh-CN / en / all)
-- A13: Hash 去重 (load existing snapshots, skip 已 scrape 嘅)
+- A13: Hash 去重（load existing snapshots, skip 已 scrape 的）
 
 Output 符合 data/schema/metadata.schema.json (CC0 metadata)。
 
@@ -25,7 +25,7 @@ Usage:
     # 三語 (繁/簡/英)
     python3 tools/scraper.py --lang all
 
-    # 唔下載 PDF (只用於 debug 結構)
+    # 不下載 PDF（只用於 debug 結構）
     python3 tools/scraper.py --dry-run
 """
 import argparse
@@ -209,7 +209,7 @@ def download_pdf(http: HttpClient, url: str, save_path: Path) -> tuple:
     if status != 200 or not data:
         return False, None
     if not data.startswith(b"%PDF"):
-        log.warning(f"PDF magic 唔啱, first 20 bytes = {data[:20]!r}")
+        log.warning(f"PDF magic 不正確, first 20 bytes = {data[:20]!r}")
         return False, None
     save_path.parent.mkdir(parents=True, exist_ok=True)
     save_path.write_bytes(data)
@@ -296,7 +296,7 @@ def main():
     parser.add_argument("--pdf-dir", type=str, default=str(DEFAULT_PDF_DIR),
                         help="PDF output directory")
     parser.add_argument("--force", action="store_true", help="Skip hash dedup")
-    parser.add_argument("--dry-run", action="store_true", help="Parse only, 唔下載 PDF")
+    parser.add_argument("--dry-run", action="store_true", help="Parse only，不下載 PDF")
     args = parser.parse_args()
 
     # Period

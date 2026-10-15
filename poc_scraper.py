@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 EDB 通告備份 — W1 PoC v2 (簡化版)
-直接 parse 搜尋結果頁, 唔需要 detail 頁
+直接 parse 搜尋結果頁，不需要 detail 頁
 
 每個 circular entry 結構 (一個 <tr>):
   td1: 日期 (dd/mm/yyyy)
@@ -169,7 +169,7 @@ def download_pdf(opener, url, save_path):
     if status != 200 or not data:
         return False, None
     if not data.startswith(b"%PDF"):
-        log.warning(f"  PDF magic 唔啱, first 20 bytes = {data[:20]!r}")
+        log.warning(f"  PDF magic 不正確, first 20 bytes = {data[:20]!r}")
         return False, None
     save_path.write_bytes(data)
     return True, hashlib.sha256(data).hexdigest()
@@ -224,7 +224,7 @@ def main():
 
     sample = entries[:TARGET_COUNT]
     log.info("=" * 60)
-    log.info(f"STEP 4: 下載頭 {len(sample)} 份嘅繁中 PDF")
+    log.info(f"STEP 4: 下載頭 {len(sample)} 份的繁中 PDF")
     log.info("=" * 60)
 
     results = []
