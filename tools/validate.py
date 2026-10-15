@@ -2,8 +2,8 @@
 """
 Minimal JSON Schema validator (stdlib only) — supports draft-07 subset.
 
-對應 EDB Circular Bot Project Plan v0.2 §6.4 嘅 metadata schema 驗證。
-唔需要 pip install jsonschema,完全 stdlib compatible。
+對應 EDB Circular Bot Project Plan v0.2 §6.4 的 metadata schema 驗證。
+不需要 pip install jsonschema，完全 stdlib compatible。
 
 支援 keywords:
 - type (string / integer / number / boolean / array / object / null, or list of types)
@@ -79,7 +79,7 @@ def validate(instance: Any, schema: dict, path: str = "$") -> list:
     if "type" in schema:
         if not _check_type(instance, schema["type"]):
             errors.append(f"{path}: expected type {schema['type']}, got {type(instance).__name__}")
-            return errors  # 唔再 validate 落去(type 錯)
+            return errors  # 不再繼續 validate（type 錯）
 
     # enum
     if "enum" in schema and instance not in schema["enum"]:

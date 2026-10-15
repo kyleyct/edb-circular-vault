@@ -454,7 +454,7 @@ def summarize_one(
             if attempt == 0:
                 user = (
                     user
-                    + "\n\n前回輸出唔係合法 JSON。請只輸出一個 JSON object，唔好加 markdown。"
+                    + "\n\n前回輸出不是合法 JSON。請只輸出一個 JSON object，不要加 markdown。"
                 )
 
     log(f"  FALLBACK offline for {cid} after LLM errors: {last_err}")

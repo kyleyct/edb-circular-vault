@@ -7,7 +7,7 @@
   "source_url": "https://www.edb.gov.hk/tc/about-edb/forms-and-circulars/index.html",
   "license": "CC0 1.0 Universal (Public Domain Dedication) - metadata only",
   "attribution": "資料來源:教育局(https://www.edb.gov.hk/)。本工具僅提供 metadata 索引,PDF 透過 Internet Archive 永久 mirror。",
-  "disclaimer": "本工具非官方 open data 索引工具,與教育局無關。如發現資料與 EDB 官網不一致,以 EDB 官網為準。開發者不對因使用本工具而產生嘅任何損失負責。",
+  "disclaimer": "本工具非官方 open data 索引工具,與教育局無關。如發現資料與 EDB 官網不一致,以 EDB 官網為準。開發者不對因使用本工具而產生的任何損失負責。",
   "circulars": [
     {
       "circular_id": "EDBCM26082",

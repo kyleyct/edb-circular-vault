@@ -1,6 +1,6 @@
 # Data Source — EDB Circular 通告站
 
-本文檔描述本項目點樣 scrape 教育局通告站,以及相關嘅 methodology。
+本文檔描述本項目如何 scrape 教育局通告站，以及相關的 methodology。
 
 ## 來源 URL
 
@@ -25,13 +25,13 @@ EDB 通告編號格式:`EDB[C|CM]NNN/YYYY`
 
 ## 通告保留期
 
-**EDB 站只保留過去 360 日(1 年)嘅通告**。過期就清除,無 archive 機制。
+**EDB 站只保留過去 360 日（1 年）的通告**。過期即清除，無 archive 機制。
 
-呢個係本項目嘅核心動機:建立永久 archive。
+這是本項目的核心動機：建立永久 archive。
 
 ## 數據源結構
 
-EDB 通告搜尋結果頁(`circular.aspx` 用 POST 表單 query 後)直接列 PDF 連結,**唔需要 detail 頁**。
+EDB 通告搜尋結果頁(`circular.aspx` 用 POST 表單 query 後)直接列 PDF 連結,**不需要 detail 頁**。
 
 每個 circular entry 係一個 `<tr>`,包含 3 個 `<td>`:
 
@@ -47,13 +47,13 @@ PDF URL 格式:`https://applications.edb.gov.hk/circular/upload/EDBC(M)/XXXX[C|E
 - `E` suffix = 英文 (`en`)
 - `S` suffix = 簡體中文 (`zh-CN`)
 
-部分通告**只有部分語言**(常見情況:有繁中, 唔一定有英文)。
+部分通告**只有部分語言**（常見情況：有繁中，不一定有英文）。
 
 ## Scraping methodology
 
 ### POST 表單(ASP.NET WebForms)
 
-EDB 站係傳統 ASP.NET WebForms,搜尋表單係 POST 而唔係 GET。
+EDB 站是傳統 ASP.NET WebForms，搜尋表單是 POST 而不是 GET。
 
 每次 POST 都要帶:
 - `__VIEWSTATE`(base64-encoded server state,~2.7KB)
@@ -77,30 +77,30 @@ EDB 站係傳統 ASP.NET WebForms,搜尋表單係 POST 而唔係 GET。
 
 - 預設 3 retries, exponential backoff(2/4/8 sec)
 - HTTP 5xx / timeout / connection error 都 retry
-- HTTP 4xx (except 429) 唔 retry(代表 client error)
+- HTTP 4xx (except 429) 不 retry（代表 client error）
 
 ## Scraping 限制
 
 - **360 日 retention**:EDB 站過期清除,本工具 scrape 最多 360 日
-- **Archive.org safe harbor**:PDF 永久 mirror 喺 archive.org,解決 EDB 清除問題
-- **三語唔齊**:部分通告只有部分語言版本,scrape 唔齊係正常
-- **公告 / 表單 / 表格**:本項目只 scrape 通告(circular + memorandum),唔包其他類型文件
+- **Archive.org safe harbor**:PDF 永久 mirror 在 archive.org，解決 EDB 清除問題
+- **三語不齊**：部分通告只有部分語言版本，scrape 不齊是正常
+- **公告 / 表單 / 表格**:本項目只 scrape 通告（circular + memorandum），不包括其他類型文件
 
 ## 私隱考慮
 
 本項目只 scrape 公開資料:
 
-- EDB 通告係政府公開資訊,本來就喺 internet 上 free access
-- 我哋唔收集任何 user data、唔 set tracking cookies
-- 抓取嘅 PDF 透過 Internet Archive 永久 mirror(archive use case safe harbor)
-- GitHub repo **唔 host 任何 PDF**,只 metadata,完全避免 PDPO 風險
+- EDB 通告是政府公開資訊，本來就在 internet 上 free access
+- 我們不收集任何 user data、不 set tracking cookies
+- 抓取的 PDF 透過 Internet Archive 永久 mirror（archive use case safe harbor）
+- GitHub repo **不 host 任何 PDF**，只 metadata，完全避免 PDPO 風險
 
 ## 法律考慮
 
 - 香港政府公告一般容許使用及翻印,須標明出處
-- 我哋喺 metadata 入面 explicit 標明「資料來源:教育局(https://www.edb.gov.hk/)」
-- Internet Archive 對 archive use case 有 safe harbor(per DMCA § 512 嘅類比)
-- 開發者唔係律師,如有法律疑慮請諮詢專業意見
+- 我們在 metadata 內 explicit 標明「資料來源：教育局(https://www.edb.gov.hk/)」
+- Internet Archive 對 archive use case 有 safe harbor(per DMCA § 512 的類比)
+- 開發者不是律師，如有法律疑慮請諮詢專業意見
 
 ## Reproducing scrape
 
@@ -119,7 +119,7 @@ python3 tools/scraper.py --days 360 --lang all
 # 自定 period
 python3 tools/scraper.py --from 2024-01-01 --to 2024-12-31
 
-# Dry run (只 parse, 唔下載 PDF)
+# Dry run（只 parse，不下載 PDF）
 python3 tools/scraper.py --dry-run
 ```
 

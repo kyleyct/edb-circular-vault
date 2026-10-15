@@ -1,26 +1,26 @@
 # Contributing to EDB Circular Vault
 
-歡迎參與貢獻!本項目旨在為香港教育界建立永久可訪問嘅 EDB 通告 metadata 索引。
+歡迎參與貢獻！本項目旨在為香港教育界建立永久可訪問的 EDB 通告 metadata 索引。
 
 ## 點樣 contribute?
 
 ### 1. 報錯 metadata(最常見)
 
-如果你發現某份通告嘅 metadata 唔啱(標題錯、日期錯、分發組別錯等):
+如果你發現某份通告的 metadata 不正確（標題錯、日期錯、分發組別錯等）：
 
 1. 開 [Issue](../../issues/new/choose)
-2. 揀 "Data correction" template
+2. 選 "Data correction" template
 3. 填寫以下資料:
    - `circular_id`(e.g. `EDBCM26082`)
    - 邊個 field 錯
    - 應該係乜嘢
    - 來源(可以係 EDB 站 link)
 
-或者直接 PR 修改 `data/metadata.json`,然後喺 PR 描述入面 cite 來源。
+或者直接 PR 修改 `data/metadata.json`，然後在 PR 描述中 cite 來源。
 
 ### 2. 翻譯 docs
 
-歡迎翻譯 `docs/` 入面嘅中文文檔去英文或其他語言。
+歡迎翻譯 `docs/` 內的中文文檔為英文或其他語言。
 
 ```bash
 docs/
@@ -52,7 +52,7 @@ docs/
 
 ### 5. 贊助 IA upload
 
-如果你有 IA account,可以幫手 upload 缺失嘅 PDF 落 Internet Archive。請先喺 Issue 講,免得重複 upload。
+如果你有 IA account，可以幫忙 upload 缺失的 PDF 到 Internet Archive。請先在 Issue 說明，免得重複 upload。
 
 ## Development Setup
 
@@ -74,8 +74,8 @@ python3 tools/scraper.py --dry-run --days 7
 
 ## 行為守則
 
-- 唔好 fabricate / mock 任何 metadata(本項目 hard rule)
-- 唔好 host 任何 PDF 喺 GitHub repo(方案 A 嘅 privacy + legal 防線)
+- 不要 fabricate / mock 任何 metadata（本項目 hard rule）
+- 不要在 GitHub repo host 任何 PDF（方案 A 的 privacy + legal 防線）
 - 尊重 EDB 站 rate limit(預設 1.5s/req)
 - 用香港繁體書面語 for user-facing content(per user preference)
 
@@ -86,9 +86,9 @@ python3 tools/scraper.py --dry-run --days 7
 3. Commit changes
 4. Push branch
 5. 開 PR,描述:
-   - 改咗咩
-   - 點解
-   - 有冇 breaking change
+   - 改了甚麼
+   - 為何
+   - 有否 breaking change
 6. 等待 review
 
 ## 版本控制
