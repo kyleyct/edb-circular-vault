@@ -1,10 +1,38 @@
 {
-  "generated_at": "2026-10-28T08:56:06+08:00",
-  "last_synced_at": "2026-10-28T08:56:06+08:00",
+  "generated_at": "2026-10-28T18:52:45+08:00",
+  "last_synced_at": "2026-10-28T18:52:45+08:00",
   "source": "edb-circular-vault",
   "disclaimer": "非官方 AI 摘要，以教育局原文為準。本站不託管 PDF。",
-  "count": 79,
+  "count": 80,
   "items": [
+    {
+      "circular_id": "EDBCM26206",
+      "title_clean": "2026「科學與中國」走進「科創大講堂」啟動儀式暨第四屆「未來香江」國際科創教育論壇",
+      "one_liner": "邀請中小學校長及教師於11月17日出席航天主題科創教育論壇，並須經培訓行事曆系統報名。",
+      "who_should_care": [
+        "小學",
+        "中學",
+        "特殊學校",
+        "校長",
+        "教師"
+      ],
+      "key_points": [
+        "活動於2026年11月17日（星期二）上午9:45至中午12:15，在教育局九龍塘教育服務中心西座四樓演講廳舉行；9:30開始登記，活動10:00開始，參加者須於9:45前就座。",
+        "論壇邀內地、海外及香港學者作主題演講，內容圍繞航天科學與科技的最新發展及其與教育的關聯。",
+        "教育局為合辦機構；活動由香港科技創新教育聯盟與中國科學院舉辦，聯盟自2019年起舉辦「科創大講堂」，並自2023年起舉辦「未來香江」國際科創教育論壇。",
+        "有意參加者須透過教育局培訓行事曆系統（TCS）報名，課程編號為ITED20260528；學校亦可瀏覽聯盟活動專頁，查閱活動程序、講者資料及最新安排。",
+        "查詢可致電3707 1143，或電郵admin@stem-alliance.org.hk，與聯盟秘書處陳小姐聯絡。"
+      ],
+      "deadlines": [],
+      "action_for_schools": "校長及教師如欲參加，須在教育局培訓行事曆系統（TCS）以課程編號ITED20260528報名；通函未列報名截止日期。學校亦可瀏覽聯盟活動專頁（https://stem-alliance.org.hk/zh-hant/events/25/）查閱程序及最新安排。查詢：3707 1143或admin@stem-alliance.org.hk（聯盟秘書處陳小姐）。",
+      "parent_note": "家長無直接行政行動；可按學校安排配合。",
+      "disclaimer": "非官方摘要，以教育局原文為準。",
+      "issue_date": "28/10/2026",
+      "edb_url": "https://applications.edb.gov.hk/circular/upload/EDBCM/EDBCM26206C.pdf",
+      "ia_url": "https://archive.org/download/edb-circulars-2026/EDBCM26206_zh-HK.pdf",
+      "generated_at": "2026-10-28T18:52:45",
+      "source": "deepseek"
+    },
     {
       "circular_id": "EDBCM26193",
       "title_clean": "中學生主題式內地交流計劃2026/27（四）",
